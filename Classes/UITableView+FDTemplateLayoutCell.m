@@ -60,7 +60,7 @@
         [cell.contentView addConstraint:widthFenceConstraint];
         
         // Auto layout engine does its math
-        fittingHeight = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+        fittingHeight = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize withHorizontalFittingPriority:UILayoutPriorityDefaultHigh verticalFittingPriority:UILayoutPriorityDefaultHigh].height;
         [cell.contentView removeConstraint:widthFenceConstraint];
         
         [self fd_debugLog:[NSString stringWithFormat:@"calculate using system fitting size (AutoLayout) - %@", @(fittingHeight)]];
